@@ -1,0 +1,44 @@
+# === Node.js ===
+node_modules/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === React (client side) ===
+build/
+dist/
+.cache/
+*.log
+
+# === C# / Visual Studio ===
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.pdb
+*.cache
+*.dll
+*.exe
+*.log
+*.obj
+*.vspscc
+*.vssscc
+*.dbmdl
+*.bak
+*.log
+*.mdf
+*.ldf
+*.sql
+
+# Visual Studio folders
+.vs/
+bin/
+obj/
+
+# === macOS ===
+.DS_Store
+
+# === Windows ===
+Thumbs.db
+desktop.ini
