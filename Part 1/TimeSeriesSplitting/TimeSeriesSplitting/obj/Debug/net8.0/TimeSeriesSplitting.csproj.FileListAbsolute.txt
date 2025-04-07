@@ -1,0 +1,42 @@
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.exe
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.deps.json
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.runtimeconfig.json
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.dll
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.pdb
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.AssemblyInfoInputs.cache
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.AssemblyInfo.cs
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.csproj.CoreCompileInputs.cache
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.dll
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\refint\TimeSeriesSplitting.dll
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.pdb
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.genruntimeconfig.cache
+C:\Users\tamar\source\repos\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\ref\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.exe
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.deps.json
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.runtimeconfig.json
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.pdb
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.AssemblyInfoInputs.cache
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.AssemblyInfo.cs
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.csproj.CoreCompileInputs.cache
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\refint\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.pdb
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.genruntimeconfig.cache
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\ref\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.exe
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.deps.json
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.runtimeconfig.json
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\bin\Debug\net8.0\TimeSeriesSplitting.pdb
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.AssemblyInfoInputs.cache
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.AssemblyInfo.cs
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.csproj.CoreCompileInputs.cache
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\refint\TimeSeriesSplitting.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.pdb
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\TimeSeriesSplitting.genruntimeconfig.cache
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeriesSplitting\TimeSeriesSplitting\obj\Debug\net8.0\ref\TimeSeriesSplitting.dll

@@ -1,0 +1,28 @@
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.exe
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.deps.json
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.runtimeconfig.json
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.pdb
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.AssemblyInfoInputs.cache
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.AssemblyInfo.cs
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.csproj.CoreCompileInputs.cache
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\refint\TimeSeries.dll
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.pdb
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.genruntimeconfig.cache
+C:\Users\tamar\Desktop\Project_Hadasim\TimeSeries\TimeSeries\obj\Debug\net8.0\ref\TimeSeries.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.exe
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.deps.json
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.runtimeconfig.json
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\bin\Debug\net8.0\TimeSeries.pdb
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.AssemblyInfoInputs.cache
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.AssemblyInfo.cs
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.csproj.CoreCompileInputs.cache
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\refint\TimeSeries.dll
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.pdb
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\TimeSeries.genruntimeconfig.cache
+C:\Users\tamar\Desktop\Project Hadasim\Part 1\TimeSeries\TimeSeries\obj\Debug\net8.0\ref\TimeSeries.dll

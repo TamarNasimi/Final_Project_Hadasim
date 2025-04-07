@@ -1,0 +1,28 @@
+סיבוכיות זמן:
+SplitLogFile(fileName, sizeLine) = O(M)
+כאשר M הוא מספר השורות בקובץ הגדול.
+
+CountLogs(partFiles) = O(M)
+
+DisplayTopErrors(errorCounts, N) = O(E log E)
+כאשר E הוא מספר קודי השגיאה הייחודיים.
+
+סך הכול:
+O(M + E log E)
+בפועל, הסיבוכיות היא O(M) ברוב המקרים, 
+אך אם E קרוב ל-M, 
+הסיבוכיות הופכת להיות O(M log M).
+
+סיבוכיות מקום:
+SplitLogFile(fileName, sizeLine) = O(K)
+כאשר K הוא מספר הקבצים שנוצרו.
+
+CountLogs(partFiles) = O(E)
+כאשר E הוא מספר קודי השגיאה הייחודיים.
+
+DisplayTopErrors(errorCounts, N) = O(E)
+
+סך הכול:
+צריכת הזיכרון תלויה בעיקר במספר קודי השגיאה השונים.
+לכן, סיבוכיות המקום הכוללת של התוכנית היא:
+O(E)

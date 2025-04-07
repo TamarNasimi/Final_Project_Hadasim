@@ -1,0 +1,14 @@
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\bin\Debug\net8.0\LogAnalyzer.exe
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\bin\Debug\net8.0\LogAnalyzer.deps.json
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\bin\Debug\net8.0\LogAnalyzer.runtimeconfig.json
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\bin\Debug\net8.0\LogAnalyzer.dll
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\bin\Debug\net8.0\LogAnalyzer.pdb
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.AssemblyInfoInputs.cache
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.AssemblyInfo.cs
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.csproj.CoreCompileInputs.cache
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.dll
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\refint\LogAnalyzer.dll
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.pdb
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\LogAnalyzer.genruntimeconfig.cache
+C:\Users\tamar\Desktop\Project_Hadasim\LogAnalyzer\LogAnalyzer\obj\Debug\net8.0\ref\LogAnalyzer.dll

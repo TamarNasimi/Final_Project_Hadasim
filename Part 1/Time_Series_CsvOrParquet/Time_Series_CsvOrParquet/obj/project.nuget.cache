@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "a9CKxs1/RnQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tamar\\Desktop\\Project Hadasim\\Part 1\\Time_Series_CsvOrParquet\\Time_Series_CsvOrParquet\\Time_Series_CsvOrParquet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tamar\\.nuget\\packages\\ironcompress\\1.6.3\\ironcompress.1.6.3.nupkg.sha512",
+    "C:\\Users\\tamar\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
+    "C:\\Users\\tamar\\.nuget\\packages\\parquet.net\\5.1.1\\parquet.net.5.1.1.nupkg.sha512",
+    "C:\\Users\\tamar\\.nuget\\packages\\snappier\\1.1.6\\snappier.1.1.6.nupkg.sha512",
+    "C:\\Users\\tamar\\.nuget\\packages\\zstdsharp.port\\0.8.1\\zstdsharp.port.0.8.1.nupkg.sha512"
+  ],
+  "logs": []
+}
