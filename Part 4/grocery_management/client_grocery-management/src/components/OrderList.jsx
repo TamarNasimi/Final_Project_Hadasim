@@ -10,7 +10,7 @@ const OrderList = ({ orders, onStatusChange }) => {
     if (user.role === 'supplier' && current === 'Pending') return 'Process';
     return null;
   };
-
+//עדכון סטטוס ההזמנה
   const handleStatusUpdate = (orderId, newStatus) => {
     fetch(`http://localhost:5000/api/orders/${orderId}/status`, {
       method: 'PUT',

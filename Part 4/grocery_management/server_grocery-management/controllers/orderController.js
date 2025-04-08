@@ -1,7 +1,10 @@
+
 const db = require('../db/db_connection');
 
+// שליפת כל ההזמנות (עם מוצרים) עבור ספק מסוים או עבור כולם
 const getOrders = (req, res) => {
     const { supplierId } = req.query;
+
     let sql = `
         SELECT 
             o.id AS order_id,
@@ -20,10 +23,10 @@ const getOrders = (req, res) => {
 
     const params = [];
 
-    if (supplierId !== undefined && supplierId !== null && supplierId !== '' && supplierId !== 'undefined') {
+    if (supplierId && supplierId !== 'undefined') {
         sql += ' WHERE o.supplier_id = ?';
         params.push(supplierId);
-      }
+    }
 
     sql += ' ORDER BY o.id DESC';
 
@@ -59,23 +62,28 @@ const getOrders = (req, res) => {
     });
 };
 
-
+// שליפת מוצרים של ספק כולל מחיר וכמות מינימלית
 const getSupplierProducts = (req, res) => {
     const { supplierId } = req.params;
 
-    db.query(
-        `SELECT p.id, p.name, p.price, p.min_quantity 
-         FROM products p 
-         JOIN supplier_products sp ON p.id = sp.product_id 
-         WHERE sp.supplier_id = ?`, 
-        [supplierId], 
-        (err, results) => {
-            if (err) return res.status(500).json(err);
-            res.json(results);
-        }
-    );
+    const sql = `
+        SELECT 
+            p.id, 
+            p.name, 
+            sp.price, 
+            sp.min_quantity 
+        FROM supplier_products sp
+        JOIN products p ON sp.product_id = p.id
+        WHERE sp.supplier_id = ?
+    `;
+
+    db.query(sql, [supplierId], (err, results) => {
+        if (err) return res.status(500).json(err);
+        res.json(results);
+    });
 };
 
+// עדכון סטטוס של הזמנה, כולל עדכון הסחורה במכולת אם ההזמנה הושלמה
 const updateOrderStatus = (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
@@ -86,10 +94,50 @@ const updateOrderStatus = (req, res) => {
 
     db.query('UPDATE orders SET status = ? WHERE id = ?', [status, id], (err) => {
         if (err) return res.status(500).json(err);
+
+        if (status === 'Completed') {
+            const fetchItemsQuery = `
+                SELECT oi.product_id, oi.quantity
+                FROM order_items oi
+                WHERE oi.order_id = ?
+            `;
+
+            db.query(fetchItemsQuery, [id], (err, items) => {
+                if (err) return res.status(500).json(err);
+
+                items.forEach(item => {
+                    const { product_id, quantity } = item;
+
+                    db.query('SELECT * FROM product_store WHERE product_id = ?', [product_id], (err, results) => {
+                        if (err) return res.status(500).json(err);
+
+                        if (results.length > 0) {
+                            db.query(
+                                'UPDATE product_store SET current_quantity = current_quantity + ? WHERE product_id = ?',
+                                [quantity, product_id],
+                                (err) => {
+                                    if (err) console.error(err);
+                                }
+                            );
+                        } else {
+                            db.query(
+                                'INSERT INTO product_store (product_id, current_quantity, min_quantity) VALUES (?, ?, 0)',
+                                [product_id, quantity],
+                                (err) => {
+                                    if (err) console.error(err);
+                                }
+                            );
+                        }
+                    });
+                });
+            });
+        }
+
         res.json({ message: `סטטוס הזמנה עודכן ל-${status}` });
     });
 };
 
+// יצירת הזמנה חדשה עם מוצרים
 const createOrder = (req, res) => {
     const { supplierId, products } = req.body;
 
@@ -97,13 +145,11 @@ const createOrder = (req, res) => {
         return res.status(400).json({ error: "חובה לבחור ספק ולפחות מוצר אחד" });
     }
 
-    // יצירת ההזמנה
     db.query('INSERT INTO orders (supplier_id) VALUES (?)', [supplierId], (err, result) => {
         if (err) return res.status(500).json(err);
 
         const orderId = result.insertId;
 
-        // הוספת המוצרים להזמנה
         const orderItems = products.map(product => [orderId, product.id, product.quantity, product.price]);
 
         db.query('INSERT INTO order_items (order_id, product_id, quantity, price) VALUES ?', [orderItems], (err) => {
@@ -113,5 +159,9 @@ const createOrder = (req, res) => {
     });
 };
 
-
-module.exports = { getOrders, updateOrderStatus, createOrder, getSupplierProducts };
+module.exports = {
+    getOrders,
+    getSupplierProducts,
+    updateOrderStatus,
+    createOrder
+};

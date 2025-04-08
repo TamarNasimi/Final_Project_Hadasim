@@ -42,6 +42,7 @@ localStorage.setItem('user', JSON.stringify({
         <div className="role-select">
           <button className="primary-btn" onClick={() => setRole("manager")}>כניסה כבעל מכולת</button>
           <button className="primary-btn" onClick={() => setRole("supplier")}>כניסה כספק</button>
+          <button className="primary-btn" onClick={() => navigate("/cash-register")}> קנייה</button>
         </div>
       ) : (
         <>

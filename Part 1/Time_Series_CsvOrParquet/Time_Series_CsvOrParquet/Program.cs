@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Parquet;
 using Parquet.Data;
+using System.Linq;
 
 class Program
 {
     public static void Main()
     {
-        string FileName = "time_series.csv";  //time_series.csv
+        string FileName = "time_series.parquet";  //time_series.csv parquet
         string outputFileName = "hourly_averages.csv";
 
 
@@ -39,6 +41,7 @@ class Program
             Console.WriteLine("No valid data in the file.");
             return;
         }
+
 
         // חישוב ממוצעים שעתיים
         Dictionary<DateTime, double> hourlyAverages = CalculateHourlyAverages(data);
@@ -73,10 +76,10 @@ class Program
                 if (parts.Length != 2)
                         continue;
 
-                if (!DateTime.TryParse(parts[0].Trim(), out DateTime timestamp))
+                if (!DateTime.TryParse(parts[0].Trim(), out DateTime timestamp)) //המרה לתאריך
                     continue;
 
-                if (!double.TryParse(parts[1].Trim(), out double value))
+                if (!double.TryParse(parts[1].Trim(), out double value)) //המרה לערך
                     continue;
 
                 data.Add((timestamp, value));
@@ -92,52 +95,71 @@ class Program
 
     //פונקציה לקריאת קבצי Parquet
     public static async Task<List<(DateTime, double)>> ReadParquet(string fileName)
-{
-    List<(DateTime, double)> data = new List<(DateTime, double)>();
-
-    try
     {
-            Stream fileStream = File.OpenRead(fileName); //פתיחת הקובץ
-            var reader = await ParquetReader.CreateAsync(fileStream); 
-                for (int i = 0; i < reader.RowGroupCount; i++) //מעבר על כל השורות
-                {
+        List<(DateTime, double)> data = new List<(DateTime, double)>();
+
+        try
+        {
+            using Stream fileStream = File.OpenRead(fileName);
+            var reader = await ParquetReader.CreateAsync(fileStream);
+
+            for (int i = 0; i < reader.RowGroupCount; i++) //מעבר על כל השורות בקובץ
+            {
                 var rowGroupReader = reader.OpenRowGroupReader(i);
-                    
-                        var dataColumns = new List<DataColumn>();
 
-                        foreach (var j in reader.Schema.GetDataFields()) //מעבר על כל ההעמודות
-                        {
-                            var column = await rowGroupReader.ReadColumnAsync(j);
-                            dataColumns.Add(column);
-                        }
+                var dataColumns = new List<DataColumn>();
 
-                        // חיפוש עמודות timestamp ו-value
-                        var timestampColumn = dataColumns.FirstOrDefault(c => c.Field.Name.ToLower().Contains("timestamp"));
-                        var valueColumn = dataColumns.FirstOrDefault(c => c.Field.Name.ToLower().Contains("value"));
-
-                        if (timestampColumn == null || valueColumn == null)
-                        {
-                            Console.WriteLine("לא נמצאו עמודות timestamp ו-value");
-                            return data;
-                        }
-                // המרת העמודות למערכים
-                var timestamps = timestampColumn.Data.Cast<DateTime>().ToArray();
-                        var values = valueColumn.Data.Cast<double>().ToArray();
-
-                        for (int k = 0; k < timestamps.Length; k++)
-                        {
-                            data.Add((timestamps[k], values[k]));
-                        }
-                   
+                foreach (var j in reader.Schema.GetDataFields())
+                {
+                    var column = await rowGroupReader.ReadColumnAsync(j);
+                    dataColumns.Add(column);
                 }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"שגיאה בקריאת קובץ Parquet: {ex.Message}");
-    }
 
-    return data;
-}
+                var timestampColumn = dataColumns.FirstOrDefault(c => c.Field.Name.ToLower().Contains("timestamp")); //המרה לחותמת זמן
+                var valueColumn = dataColumns.FirstOrDefault(c => c.Field.Name.ToLower().Contains("value")); //המרה לערך
+
+                if (timestampColumn == null || valueColumn == null)
+                {
+                    Console.WriteLine("לא נמצאו עמודות timestamp ו-value");
+                    return data;
+                }
+
+
+                int length = timestampColumn.Data.Length;
+                var timestamps = new DateTime[length];
+                var values = new double[length];
+
+                for (int k = 0; k < length; k++)
+                {
+                    var tsObj = timestampColumn.Data.GetValue(k);
+                    var valObj = valueColumn.Data.GetValue(k);
+
+                    if (tsObj == null || valObj == null)
+                    {
+                        Console.WriteLine($"שורה {k}: ערך null נמצא בקובץ Parquet.");
+                        continue;
+                    }
+
+
+                    DateTime timestamp = Convert.ToDateTime(tsObj);
+                    double value = Convert.ToDouble(valObj);
+
+                    if (double.IsNaN(value))
+                    {
+                        continue;
+                    }
+
+                    data.Add((timestamp, value));
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"שגיאה בקריאת קובץ Parquet: {ex.Message}");
+        }
+
+        return data;
+    }
 
 
     // פונקציה המחשבת ממוצעים שעתיים
@@ -156,6 +178,16 @@ class Program
             if (!double.IsNaN(value.value))
                 hourlyData[hourKey].Add(value.value);  // הוספת ערך לרשימה של השעה
         }
+
+        //// הדפסה של כל שעה והסכום הכולל לפני חישוב ממוצע
+        //foreach (var kvp in hourlyData)
+        //{
+        //    double sum = kvp.Value.Sum();
+        //    int count = kvp.Value.Count;
+        //    Console.WriteLine($"שעה: {kvp.Key}, כמות ערכים: {count}, סכום כולל: {sum}");
+        //}
+
+
 
         // חישוב ממוצע עבור כל שעה
         return hourlyData

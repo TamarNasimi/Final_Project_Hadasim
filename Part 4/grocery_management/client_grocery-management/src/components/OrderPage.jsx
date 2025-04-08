@@ -5,6 +5,7 @@ import OrderList from '../components/OrderList';
 const OrderPage = ({ title, filterStatus = [] }) => {
   const [orders, setOrders] = useState([]);
 
+  //קבלת כל הההזמנות
   const fetchOrders = useCallback(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     const supplierId = user?.id;

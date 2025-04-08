@@ -38,15 +38,15 @@ function handleProduct(product, supplierId) {
 
             if (results.length > 0) {
                 const productId = results[0].id;
-                insertSupplierProduct(supplierId, productId, resolve, reject);
+                insertSupplierProduct(supplierId, productId, price, minQuantity, resolve, reject);
             } else {
                 db.query(
-                    "INSERT INTO products (name, price, min_quantity) VALUES (?, ?, ?)",
-                    [name, price, minQuantity],
+                    "INSERT INTO products (name) VALUES (?)",
+                    [name],
                     (err, result) => {
                         if (err) return reject(err);
                         const productId = result.insertId;
-                        insertSupplierProduct(supplierId, productId, resolve, reject);
+                        insertSupplierProduct(supplierId, productId, price, minQuantity, resolve, reject);
                     }
                 );
             }
@@ -54,12 +54,17 @@ function handleProduct(product, supplierId) {
     });
 }
 
-function insertSupplierProduct(supplierId, productId, resolve, reject) {
-    db.query("INSERT INTO supplier_products (supplier_id, product_id) VALUES (?, ?)", [supplierId, productId], (err) => {
-        if (err) return reject(err);
-        resolve();
-    });
+function insertSupplierProduct(supplierId, productId, price, minQuantity, resolve, reject) {
+    db.query(
+        "INSERT INTO supplier_products (supplier_id, product_id, price, min_quantity) VALUES (?, ?, ?, ?)",
+        [supplierId, productId, price, minQuantity],
+        (err) => {
+            if (err) return reject(err);
+            resolve();
+        }
+    );
 }
+
 
 const login = (req, res) => {
     const { email, password, role } = req.body;

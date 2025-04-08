@@ -1,4 +1,4 @@
-// screens/AllOrders.jsx
+
 import React from 'react';
 import OrderPage from '../components/OrderPage';
 

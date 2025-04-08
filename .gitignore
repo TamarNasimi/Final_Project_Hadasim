@@ -29,7 +29,7 @@ dist/
 *.log
 *.mdf
 *.ldf
-*.sql
+
 
 # Visual Studio folders
 .vs/

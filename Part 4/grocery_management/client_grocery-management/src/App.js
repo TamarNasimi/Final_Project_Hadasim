@@ -7,6 +7,8 @@ import SupplierOrderManagement from "./screens/SupplierOrderManagement";
 import NewOrder from "./screens/NewOrder";
 import OrderStatus from "./screens/OrderStatus";
 import AllOrders from "./screens/AllOrders";
+import ProductStore from "./screens/ProductStore";
+import CashRegister from "./screens/CashRegister";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path="/new-order" element={<NewOrder />} />
       <Route path="/order-status" element={<OrderStatus />} />
       <Route path="/all-orders" element={<AllOrders />} />
+      <Route path="/product-store" element={<ProductStore />} />
+      <Route path="/cash-register" element={<CashRegister />} />
     </Routes>
   );
 }

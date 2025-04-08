@@ -12,23 +12,27 @@ con.connect((err) => {
     if (err) throw err;
     console.log("Connected!");
 
-    // מחיקת טבלאות אם הן קיימות
-    const dropTables = [
-        "DROP TABLE IF EXISTS supplier_products",
-        "DROP TABLE IF EXISTS orders",
-        "DROP TABLE IF EXISTS products",
-        "DROP TABLE IF EXISTS users"
-    ];
+//     // מחיקת טבלאות אם הן קיימות
+//     const dropTables = [
+//         "DROP TABLE IF EXISTS supplier_products",
+//         "DROP TABLE IF EXISTS order_items",
+//         "DROP TABLE IF EXISTS orders",
+//         "DROP TABLE IF EXISTS product_store",
+//         "DROP TABLE IF EXISTS products",
+//         "DROP TABLE IF EXISTS users",
+//         "DROP TABLE IF EXISTS order_items",
+//         "DROP TABLE IF EXISTS product_store"
+//     ];
 
-    dropTables.forEach((query) => {
-        con.query(query, (err) => {
-            if (err) throw err;
-        });
-    });
+//     dropTables.forEach((query) => {
+//         con.query(query, (err) => {
+//             if (err) throw err;
+//         });
+//     });
 
-    console.log("Existing tables dropped (if existed)");
+//     console.log("Existing tables dropped (if existed)");
 
-    const sql = [
+     const sql = [
         // טבלת משתמשים (ספקים ובעל המכולת)
         `CREATE TABLE IF NOT EXISTS users (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,14 +44,11 @@ con.connect((err) => {
             phone VARCHAR(20) DEFAULT NULL
         )`,
 
-        // טבלת מוצרים (כל המוצרים האפשריים להזמנה)
         `CREATE TABLE IF NOT EXISTS products (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(255) NOT NULL UNIQUE,
-            price DECIMAL(10,2) NOT NULL,
-            min_quantity INT NOT NULL
+            name VARCHAR(255) NOT NULL UNIQUE
         )`,
-
+        
         // טבלת הזמנות
         `CREATE TABLE IF NOT EXISTS orders (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,14 +57,16 @@ con.connect((err) => {
             FOREIGN KEY (supplier_id) REFERENCES users(id) ON DELETE CASCADE
         )`,
 
-        // קשר בין ספקים למוצרים
-        `CREATE TABLE IF NOT EXISTS supplier_products (
+       ` CREATE TABLE IF NOT EXISTS supplier_products (
             supplier_id INT,
             product_id INT,
+            price DECIMAL(10,2) NOT NULL,
+            min_quantity INT NOT NULL,
             PRIMARY KEY (supplier_id, product_id),
             FOREIGN KEY (supplier_id) REFERENCES users(id) ON DELETE CASCADE,
             FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
         )`,
+
         `CREATE TABLE IF NOT EXISTS order_items (
             id INT AUTO_INCREMENT PRIMARY KEY,
             order_id INT,
@@ -72,8 +75,22 @@ con.connect((err) => {
             price DECIMAL(10,2) NOT NULL,
             FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
             FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-        )`
-    ];
+        )`,
+         // טבלת סחורה במכולת
+         `CREATE TABLE IF NOT EXISTS product_store (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            product_id INT NOT NULL,
+            current_quantity INT NOT NULL,
+            min_quantity INT NOT NULL,
+            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+        )`,
+`CREATE TABLE alerts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT,
+    message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)`
+     ];
 
     sql.forEach((query) => {
         con.query(query, (err) => {
@@ -90,6 +107,7 @@ con.connect((err) => {
         if (err) throw err;
         console.log("Admin user inserted successfully!");
     });
+
 
     console.log("Tables created successfully!");
     con.end();

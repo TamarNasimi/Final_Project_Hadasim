@@ -12,7 +12,7 @@ con.connect((err) => {
   if (err) throw err;
   console.log("Connected to DB");
 
-  const tables = ["users", "products", "supplier_products", "orders", "order_items"];
+  const tables = ["users", "products", "supplier_products", "orders", "order_items", "product_store", "alerts"];
 
   let queriesCompleted = 0;
 
